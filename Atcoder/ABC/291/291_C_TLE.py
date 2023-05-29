@@ -1,26 +1,28 @@
 # https://atcoder.jp/contests/abc291/tasks/abc291_c
 
-def check(set1,s):
+def check(list1,s):
     x = 0
     y = 0
     for temp in s:
         if temp == 'R':
             x += 1
+            list1.append([x,y])
         if temp == 'L':
             x -= 1
+            list1.append([x,y])
         if temp == 'U':
             y += 1
+            list1.append([x,y])
         if temp == 'D':
             y -= 1
-        if (x,y) in set1:
+            list1.append([x,y])
+        if [x,y] in list1[:-1]:
             return 1
-        set1.add((x,y))
 
 n = int(input())
 s = input()
-set1 = {(0,0)}
-
-if check(set1,s) == 1:
+list1 = [[0,0]]
+if check(list1,s) == 1:
     print('Yes')
 else:
     print('No')

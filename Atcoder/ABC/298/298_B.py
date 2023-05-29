@@ -19,4 +19,3 @@ if hantei(A,n) + hantei(Arot1,n) + hantei(Arot2,n) + hantei(Arot3,n) >= 1:
     print('Yes')
 else:
     print('No')
-

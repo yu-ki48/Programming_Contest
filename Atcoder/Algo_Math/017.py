@@ -13,12 +13,14 @@ def euclid(n1, n2):
     else:
         return n2
 
-ans = euclid(a[0],a[1])
+gcm = euclid(a[0],a[1])
+mul = a[0] * a[1]
+lcm = mul // gcm
 for i in range(2,n):
-    ans = euclid(ans, a[i])
-print(ans)
-lcm = 1
-for t in range(n):
-    a[t] = a[t] // ans
-    lcm *= a[t]
-print(lcm * ans)
+    lcm = mul // gcm
+    gcm = euclid(gcm, a[i])
+    mul *= a[i]
+print(lcm)
+
+    
+
